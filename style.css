@@ -230,10 +230,11 @@ body>p{
 
 @media (min-width:900px) and (max-width:1180px) and (min-height:1200px) and (hover:none){
   .hero{
-    padding: clamp(24px,4vh,48px) var(--s-4) clamp(8px,1.6vh,16px);
+    padding: 28px var(--s-4) 12px;
   }
   .timeline{
-    padding: clamp(12px,2vh,24px) var(--s-4) clamp(8px,1.2vh,12px);
+    padding: 12px var(--s-4) 10px;
+    gap: var(--s-3);
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -243,17 +244,23 @@ body>p{
     -webkit-overflow-scrolling: touch;
   }
   .timeline::after{
-    margin: clamp(12px,2vh,20px) 0 clamp(6px,1vh,10px);
+    margin: 10px 0 6px;
   }
-  body>p{ padding: 0 var(--s-4) clamp(2px,1vh,8px);
-    display: block;
-  }
+
   .card{
     flex: 0 0 auto;
     width: 360px;
     min-width: 300px;
     scroll-snap-align:start;
   }
+  @media (pointer: coarse) and (hover: none) {
+  .timeline{
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+  }
+}
 }
 
 @media (prefers-reduced-motion:reduce){
